@@ -19,25 +19,9 @@ CHOICE = [
     'DAROT',
     'Be kind to your friend!',
     'DAVID',
-    'KEY'
+    'KEY',
 ]
-class SpeechRecognizer(threading.Thread):
-    
-    def __init__(self):
-        super(SpeechRecognizer, self).__init__()
-        self.setDaemon(True)
-        self.recognized_text = "initial"
 
-    def run(self):
-        while True:
-            print("thread call: ")
-    
-            time.sleep(1.0)
-            # self.recognized_text = random.choice(self.ANSWERS)
-
-
-# recognizer = SpeechRecognizer()
-# recognizer.start()
 def talk():
     input=sr.Recognizer()
     with sr.Microphone() as source:
@@ -69,31 +53,7 @@ def respond(output):
         photo = ImageTk.PhotoImage(image)
     def get_answer (self):
         self.answer_text.set(random.choice(CHOICE))
-        root.after(100, self.update_recognized_text)
 
-class App(object):
-    def __init__(self, master):
-        frame = tkinter.Frame(master)
-        frame.pack()
-        image = Image.open("ball.jpg")
-        photo = ImageTk.PhotoImage(image)
-        self.answer_text = tkinter.StringVar()
-        self.answer = tkinter.Label(frame, font=("Helvetical", 16), textvariable = self.answer_text)
-        self.crystal_ball = tkinter.Label(frame, image = photo)
-        self.crystal_ball.image = photo
-        self.crystal_ball.pack()
-        self.answer.place(relx = 0.5, rely = 0.4, anchor=tkinter.CENTER)
-        self.quit_button = tkinter.Button(frame, text = "QUIT", command = frame.quit)
-        self.ask_button = tkinter.Button(frame, text = "ASk", command = random.choice(CHOICE))
-        self.ask_button.pack(side = tkinter.LEFT)
-                    
-    def get_answer (self):
-        self.answer_text.set(random.choice(CHOICE))
-
-
-# root = tkinter.Tk()
-# app = App(root)
-# root.mainloop()
 if __name__=='__main__':
 
     respond("Hi, I am Pike. I will assist you Sir!")
@@ -132,6 +92,7 @@ if __name__=='__main__':
             app_id= "H547RP-7YTRPJ77UA"
             client = wolframalpha.Client(app_id)
             res = client.query(text)
+            print("result " , res)
             answer = next(res.results).text
             print("tets  "+ answer)
             respond("The answer is " + answer)
@@ -142,7 +103,7 @@ if __name__=='__main__':
             time.sleep(5)
             
         elif 'youtube' in text: 
-            driver = webdriver.Chrome(r"Mention your webdriver location") 
+            driver = webdriver.Chrome("D:/Project/python/webpy/VoiceKey/chromedriver.exe") 
             driver.implicitly_wait(1) 
             driver.maximize_window()
             respond("Opening in youtube") 
