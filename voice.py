@@ -66,7 +66,6 @@ class App(object):
         self.answer_text.set(random.choice(CHOICE))
 
     def start (self):
-    
             respond("Hi, I am Pike. I will assist you Sir!")
             while(1):
                 respond("Let's make a command Sir!")
