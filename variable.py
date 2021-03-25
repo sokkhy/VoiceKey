@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-=======
-counter = 100          # An integer assignment
-miles   = 1000.0       # A floating point
-name    = "John"       # A string
-list    = ['1','2']    # A list
-print ("counter ", counter)
-print ("miles ", miles)
-print ("name ", name)
-print ("list ", list)
-
-
-
-
-
-
-print ("counter " , str(counter))
-print ("miles ", int(miles))
->>>>>>> 328004f2d96a0f70b17277c1fa44b40c99186efa
 
 # counter = 100          # An integer assignment
 # miles   = 1000.0       # A floating point
@@ -39,14 +20,38 @@ print ("miles ", int(miles))
 
 
 
-c = 1 + 2j
-#Real Part of complex number
-print('Complex Number: Real Part is = ', c. real)
 
 
-#Imaginary Part of complex number
-print('Complex Number: Imaginary Part is = ', c. imag)
+
+_getList = ["key",26,"IT"] #List 
+
+print("employee age " , _getList[1]) # get list item by index 
 
 
-##Conjugate of complex number
-print('Complex Number: conjugate Part = ', c. conjugate())
+my_tuple = ('a', 'b', 'c')  # literal notation to create a new tuple
+my_list = list(my_tuple) 
+
+
+print(type(my_list))
+
+
+nuts = list(("pecan nut", "walnut", "cashew nut", "macadamia nut"))
+
+forrests_favorites = list(nuts) # makes a new list with the same content
+
+
+#print(forrests_favorites)
+
+
+
+set_new_fruit = {"apple", "banana", "cherry"}
+set_exsit_fruit = {"mango", "cherry"}
+set_price = {1, 5, 7, 9, 3}
+
+
+#set_new_fruit.update(set_price)
+
+#set_fruit = set_new_fruit.difference(set_exsit_fruit)
+#set_fruit = set_new_fruit.intersection(set_exsit_fruit)
+set_fruit = set_new_fruit.symmetric_difference(set_exsit_fruit)
+print("Update fruit ", set_fruit)
