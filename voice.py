@@ -53,8 +53,8 @@ class App(object):
         image = Image.open("ball.jpg")
         photo = ImageTk.PhotoImage(image)
         self.answer_text = tkinter.StringVar()
-        self.answer = tkinter.Label(frame, font=("Helvetical", 16), textvariable = self.answer_text)
         self.crystal_ball = tkinter.Label(frame, image = photo)
+        self.answer = tkinter.Label(frame, font=("Helvetical", 16), textvariable = self.answer_text)
         self.crystal_ball.image = photo
         self.crystal_ball.pack()
         self.answer.place(relx = 0.5, rely = 0.4, anchor=tkinter.CENTER)
@@ -66,6 +66,8 @@ class App(object):
         self.answer_text.set(random.choice(CHOICE))
 
     def start (self):
+            #self.answer_text.set("Hi, I am Pike. I will assist you Sir!")
+            self.answer.config(text="Hi, I am Pike. I will assist you Sir!")
             respond("Hi, I am Pike. I will assist you Sir!")
             while(1):
                 respond("Let's make a command Sir!")
