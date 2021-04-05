@@ -47,10 +47,10 @@ class GUI(threading.Thread):
         #self.sv.set(text)
       
         
-        # f = open("user.txt" , "r")
-        # if f.mode =="r":
-        #     content = f.read()
-        self.respond(content)
+        f = open("user.txt" , "r")
+        if f.mode =="r":
+            content = f.read()
+            self.respond(content)
         # Label string is updated in GUI thread when #StringVar is changed
         # Show the value that would appear on the # label
         #print(value)
