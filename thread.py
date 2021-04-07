@@ -20,12 +20,11 @@ class GUI(threading.Thread):
         
         # Label display data bind StringVar
         self.label = tk.Label(self.root, textvariable=self.sv)
-        self.image1 = Image.open("ball.jpg")
-        self.test = ImageTk.PhotoImage(self.image1)
+        # self.image1 = Image.open("ball.jpg")
+        # self.test = ImageTk.PhotoImage(self.image1)
 
-        self.label = tk.Label(image=self.test)
-        self.label.image = self.test
-        
+        # self.label = tk.Label(image=self.test)
+        # self.label.image = self.test
         self.label.pack()
         # Button displayl
         self.button = tk.Button(self.root, text='សួរសំនួរ', command=self.change_value_callback)
@@ -49,15 +48,15 @@ class GUI(threading.Thread):
         return data
     def change_value(self):
         #for value in range(100):
-       # text=self.talk().lower()
+        text=self.talk().lower()
         time.sleep(0.05)
-        #self.sv.set(text)
+        self.sv.set(text)
       
         
-        f = open("user.txt" , "r")
-        if f.mode =="r":
-            content = f.read()
-            self.respond(content)
+      #  f = open("user.txt" , "r")
+      #  if f.mode =="r":
+     #     content = f.read()
+        self.respond(text)
         # Label string is updated in GUI thread when #StringVar is changed
         # Show the value that would appear on the # label
         #print(value)
