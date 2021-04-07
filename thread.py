@@ -5,6 +5,7 @@ import tkinter as tk
 import playsound # to play saved mp3 file 
 import os # to save/open files 
 import speech_recognition as sr #convert speech to text
+from PIL import Image, ImageTk
 class GUI(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
@@ -19,9 +20,15 @@ class GUI(threading.Thread):
         
         # Label display data bind StringVar
         self.label = tk.Label(self.root, textvariable=self.sv)
+        self.image1 = Image.open("ball.jpg")
+        self.test = ImageTk.PhotoImage(self.image1)
+
+        self.label = tk.Label(image=self.test)
+        self.label.image = self.test
+        
         self.label.pack()
         # Button displayl
-        self.button = tk.Button(self.root, text='push', command=self.change_value_callback)
+        self.button = tk.Button(self.root, text='សួរសំនួរ', command=self.change_value_callback)
         self.button.pack()
         self.root.mainloop()
     # Callback that executes # change_value in another thread

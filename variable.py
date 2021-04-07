@@ -15,14 +15,6 @@
 # print ("List_To_String ",  type(List_to_String)) # List to String
 
 
-
-
-
-
-
-
-
-
 _getList = ["key",26,"IT"] #List 
 
 # print("employee age " , _getList[1]) # get list item by index 
