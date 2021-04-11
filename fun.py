@@ -1,5 +1,5 @@
 
-# find the average marks and return it
+#create a function to find the average marks and return it
 def find_average_marks(marks):
     
     #get the total score 
